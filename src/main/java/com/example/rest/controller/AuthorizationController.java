@@ -24,14 +24,5 @@ public class AuthorizationController {
         return service.getAuthorities(user, password);
     }
 
-    @ExceptionHandler(InvalidCredentials.class)
-    public ResponseEntity<String> invalidCredentials(InvalidCredentials e){
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-    }
 
-    @ExceptionHandler(UnauthorizedUser.class)
-    public ResponseEntity<String> unauthorizedUser(UnauthorizedUser e){
-        System.out.println(e.getMessage());
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
-    }
 }
