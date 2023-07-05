@@ -1,7 +1,6 @@
 package com.example.rest.handlerMethodArgumentResolver;
 
 import com.example.rest.model.User;
-import jakarta.validation.constraints.Size;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
