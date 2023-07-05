@@ -1,6 +1,8 @@
 package com.example.rest.handlerMethodArgumentResolver;
 
 import com.example.rest.model.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -20,7 +22,8 @@ public class MyHandlerMethodArgumentResolver implements HandlerMethodArgumentRes
                                   WebDataBinderFactory binderFactory) throws Exception {
         String name = webRequest.getParameter("name");
         String password = webRequest.getParameter("password");
-        String methodOfRequest = parameter.getMethod().getName();
+        HttpServletRequest methodOfRequest2 = webRequest.getNativeRequest(HttpServletRequest.class);
+        String methodOfRequest = methodOfRequest2.getMethod();
         if (isNotSet(name)) {
             name = "defaultBar";
         }
