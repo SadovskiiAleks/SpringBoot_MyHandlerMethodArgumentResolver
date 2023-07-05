@@ -9,12 +9,15 @@ public class User {
     @Size(min = 1, max = 30)
     private String password;
 
+    private String methodOfRequest;
+
     public User() {
     }
 
-    public User(String name, String password) {
+    public User(String name, String password, String methodOfRequest) {
         this.name = name;
         this.password = password;
+        this.methodOfRequest = methodOfRequest;
     }
 
     public String getName() {
@@ -31,5 +34,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getMethodOfRequest() {
+        return methodOfRequest;
+    }
+
+    public void setMethodOfRequest(String methodOfRequest) {
+        this.methodOfRequest = methodOfRequest;
     }
 }
